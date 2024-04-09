@@ -24,17 +24,17 @@ class _HomePageState extends State<HomePage> {
   List billPayments = const <MenuItem>[
     MenuItem(
         title: 'Buy Airtime',
-        icon: Icons.menu,
+        icon: Icons.score,
         color: Color(0xFFCFEDFA),
         iconColor: Color(0xFF141DF3)),
     MenuItem(
         title: 'Buy Data',
-        icon: Icons.signal_wifi_4_bar,
+        icon: Icons.cell_tower_outlined,
         color: Color(0xFFDDFACF),
         iconColor: Color(0xFF1CB9A7)),
     MenuItem(
         title: 'Cable tv',
-        icon: Icons.tv_outlined,
+        icon: Icons.desktop_windows_outlined,
         color: Color(0xFFD4FBEC),
         iconColor: Color(0xFFCFEDFA)),
     MenuItem(
@@ -44,22 +44,22 @@ class _HomePageState extends State<HomePage> {
         iconColor: Color(0xFFFB0079)),
     MenuItem(
         title: 'Become an Agent',
-        icon: Icons.signal_wifi_4_bar,
+        icon: Icons.support_agent,
         color: Color(0xFFFAF5CF),
         iconColor: Color(0xFFFF9A04)),
     MenuItem(
         title: 'Education Payment',
-        icon: Icons.signal_wifi_4_bar,
+        icon: Icons.school_outlined,
         color: Color(0xFFFACFE1),
         iconColor: Color(0xFFFF1111)),
     MenuItem(
         title: 'Withdraw Funds',
-        icon: Icons.signal_wifi_4_bar,
+        icon: Icons.sports_baseball_outlined,
         color: Color(0xFFDDCFFA),
         iconColor: Color(0xFF3C1DB5)),
     MenuItem(
         title: 'Ask 4 Pay',
-        icon: Icons.signal_wifi_4_bar,
+        icon: Icons.receipt_long_outlined,
         color: Color(0xFFF1FACF),
         iconColor: Color(0xFF125807)),
   ];
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: const Color.fromARGB(255, 220, 220, 220),
                             borderRadius: BorderRadius.circular(50),
                           ),
                           height: 50,
@@ -99,19 +99,19 @@ class _HomePageState extends State<HomePage> {
                             ),
                             Text('Good Evening',
                                 style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.bold)),
+                                    fontSize: 16, fontWeight: FontWeight.bold)),
                           ],
                         ),
                       ],
                     ),
                     Container(
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 177, 176, 176),
+                        color: Color.fromARGB(255, 212, 211, 211),
                         borderRadius: BorderRadius.circular(50),
                       ),
                       height: 50,
                       width: 50,
-                      child: Icon(Icons.menu_outlined),
+                      child: Icon(Icons.qr_code_2, color: Colors.blue, size: 28),
                     )
                   ],
                 ),
@@ -136,7 +136,7 @@ class _HomePageState extends State<HomePage> {
                               Text('Current Balance',
                                   style: TextStyle(color: Colors.white)),
                               SizedBox(width: 5),
-                              Icon(Icons.menu, color: Colors.white, size: 10)
+                              Icon(Icons.visibility, color: Colors.white, size: 10)
                             ],
                           ),
                           const SizedBox(height: 10),
@@ -168,7 +168,7 @@ class _HomePageState extends State<HomePage> {
                                             style:
                                                 TextStyle(color: Colors.white),
                                           ),
-                                          Icon(Icons.menu, color: Colors.white),
+                                          Icon(Icons.save_alt, color: Colors.white),
                                         ]),
                                   ),
                                   Container(
@@ -187,7 +187,7 @@ class _HomePageState extends State<HomePage> {
                                             style:
                                                 TextStyle(color: Colors.white),
                                           ),
-                                          Icon(Icons.menu, color: Colors.white),
+                                          Icon(Icons.shortcut_rounded, color: Colors.white),
                                         ]),
                                   ),
                                 ]),
@@ -202,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(fontWeight: FontWeight.bold)),
                 SizedBox(height: 20),
                 SizedBox(
-                  height: 180,
+                  height: 200,
                   child: GridView.count(
                     crossAxisCount: 4,
                     crossAxisSpacing: 6,
@@ -216,7 +216,7 @@ class _HomePageState extends State<HomePage> {
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Transactions'),
+                    Text('Transactions', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                     Text('See All'),
                   ],
                 ),

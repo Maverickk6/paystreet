@@ -10,19 +10,33 @@ class MenuCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
+    return Stack(
+      alignment: Alignment.bottomCenter,
       children: [
         Container(
-          height: 50,
-          width: 50,
+          height: 80,
+          width: 80,
           decoration: BoxDecoration(
+            border: Border.all(color: Colors.white, width: 18, ),
             color: menuItem.color,
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(20),
           ),
           child: Icon(menuItem.icon, color: menuItem.iconColor),
         ),
-        Expanded(child: Text(menuItem.title, textAlign: TextAlign.center,))
+        Positioned(
+          width: 75,
+          top: 73,
+          bottom: 0,
+          child: Flexible(
+            
+            child: Text(
+                        menuItem.title,
+                        textAlign: TextAlign.center,
+                        softWrap: true,
+                        overflow: TextOverflow.visible,
+                      ),
+          ),
+        )
       ],
     );
   }
