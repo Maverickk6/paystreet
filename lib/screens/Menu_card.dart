@@ -14,6 +14,7 @@ class MenuCard extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       children: [
         Container(
+          clipBehavior: Clip.hardEdge,
           height: 80,
           width: 80,
           decoration: BoxDecoration(
@@ -31,6 +32,7 @@ class MenuCard extends StatelessWidget {
             
             child: Text(
                         menuItem.title,
+                        style: const TextStyle(fontSize: 13),
                         textAlign: TextAlign.center,
                         softWrap: true,
                         overflow: TextOverflow.visible,
