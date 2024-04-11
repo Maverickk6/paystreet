@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:paystreet/screens/Menu_card.dart';
 import 'package:paystreet/screens/menu_widget.dart';
 import 'package:paystreet/screens/tile_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -74,7 +75,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -83,23 +84,24 @@ class _HomePageState extends State<HomePage> {
                         Container(
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(255, 220, 220, 220),
-                            borderRadius: BorderRadius.circular(50),
+                            borderRadius: BorderRadius.circular(50).r,
                           ),
-                          height: 50,
-                          width: 50,
+                          height: 38.h,
+                          width: 38.w,
                           child: Image.asset('assets/images/girl2.png'),
                         ),
-                        const SizedBox(width: 10),
-                        const Column(
+                        SizedBox(width: 10.w),
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               'Hi, Esther Bukola',
-                              style: TextStyle(fontSize: 13),
+                              style: TextStyle(fontSize: 13.sp),
                             ),
                             Text('Good Evening',
                                 style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold)),
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.bold)),
                           ],
                         ),
                       ],
@@ -107,87 +109,99 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       decoration: BoxDecoration(
                         color: Color.fromARGB(255, 212, 211, 211),
-                        borderRadius: BorderRadius.circular(50),
+                        borderRadius: BorderRadius.circular(50).r,
                       ),
-                      height: 50,
-                      width: 50,
-                      child: Icon(Icons.qr_code_2, color: Colors.blue, size: 28),
+                      height: 45.h,
+                      width: 45.w,
+                      child: Icon(Icons.qr_code_2,
+                          color: Colors.blue, size: 28.sp),
                     )
                   ],
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 Container(
-                  height: 190,
+                  height: 190.h,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.black,
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(8).r,
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 8.0),
+                            vertical: 8.0, horizontal: 8.0)
+                        .r,
                     child: Center(
                       child: Column(
                         children: [
-                          const SizedBox(height: 6),
-                          const Row(
+                          SizedBox(height: 6.h),
+                          Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text('Current Balance',
-                                  style: TextStyle(color: Colors.white)),
-                              SizedBox(width: 5),
-                              Icon(Icons.visibility, color: Colors.white, size: 10)
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12.sp)),
+                              SizedBox(width: 5.w),
+                              Icon(Icons.visibility,
+                                  color: Colors.white, size: 10.sp)
                             ],
                           ),
-                          const SizedBox(height: 10),
-                          const Text(
+                          SizedBox(height: 10.h),
+                          Text(
                             '\$7,860.00',
-                            style: TextStyle(color: Colors.white, fontSize: 28),
+                            style: TextStyle(
+                                color: Colors.white,
+                                height: 1.2,
+                                fontSize: 30.sp,
+                                fontWeight: FontWeight.w400),
                           ),
-                          const SizedBox(height: 10),
+                          SizedBox(height: 15.h),
                           Padding(
                             padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
+                                const EdgeInsets.symmetric(horizontal: 8.0).r,
                             child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
-                                    height: 80,
-                                    width: 160,
+                                    height: 80.h,
+                                    width: 160.w,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(6),
+                                      borderRadius: BorderRadius.circular(10).r,
                                       color: Color(0xFF45466D),
                                     ),
-                                    child: const Column(
+                                    child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
                                           Text(
                                             'Fund Account',
-                                            style:
-                                                TextStyle(color: Colors.white),
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 13.sp),
                                           ),
-                                          Icon(Icons.save_alt, color: Colors.white),
+                                          Icon(Icons.save_alt,
+                                              color: Colors.white),
                                         ]),
                                   ),
                                   Container(
-                                    height: 80,
-                                    width: 160,
+                                    height: 80.h,
+                                    width: 160.w,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(6),
+                                      borderRadius: BorderRadius.circular(10).r,
                                       color: Color(0xFF45466D),
                                     ),
-                                    child: const Column(
+                                    child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
                                           Text(
                                             'Internal Transfer',
-                                            style:
-                                                TextStyle(color: Colors.white),
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 13.sp),
                                           ),
-                                          Icon(Icons.shortcut_rounded, color: Colors.white),
+                                          Icon(Icons.shortcut_rounded,
+                                              color: Colors.white),
                                         ]),
                                   ),
                                 ]),
@@ -197,10 +211,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
-                Text('Bill Payments',
+                const SizedBox(height: 20),
+                const Text('Bill Payments',
                     style: TextStyle(fontWeight: FontWeight.bold)),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 SizedBox(
                   height: 200,
                   child: GridView.count(
@@ -216,7 +230,9 @@ class _HomePageState extends State<HomePage> {
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Transactions', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                    Text('Transactions',
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold)),
                     Text('See All'),
                   ],
                 ),
