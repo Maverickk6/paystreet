@@ -70,12 +70,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
+          padding: EdgeInsets.symmetric(horizontal: 12.w),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 10.h),
+                20.verticalSpace,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -84,13 +84,17 @@ class _HomePageState extends State<HomePage> {
                         Container(
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(255, 220, 220, 220),
-                            borderRadius: BorderRadius.circular(50).r,
+                            borderRadius: BorderRadius.circular(50.r),
                           ),
                           height: 38.h,
                           width: 38.w,
-                          child: Image.asset('assets/images/girl2.png'),
+                          child: Image.asset(
+                            'assets/images/girl2.png',
+                            height: 33.h,
+                            width: 33.w,
+                          ),
                         ),
-                        SizedBox(width: 10.w),
+                        10.horizontalSpace,
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -109,64 +113,64 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       decoration: BoxDecoration(
                         color: Color.fromARGB(255, 212, 211, 211),
-                        borderRadius: BorderRadius.circular(50).r,
+                        borderRadius: BorderRadius.circular(50.r),
                       ),
                       height: 45.h,
                       width: 45.w,
-                      child: Icon(Icons.qr_code_2,
-                          color: Colors.blue, size: 28.sp),
+                      child:
+                          Icon(Icons.qr_code_2, color: Colors.blue, size: 28.r),
                     )
                   ],
                 ),
-                SizedBox(height: 20.h),
+                20.verticalSpace,
                 Container(
-                  height: 190.h,
-                  width: double.infinity,
+                  height: 192.h,
+                  width: 386.w,
                   decoration: BoxDecoration(
                     color: Colors.black,
-                    borderRadius: BorderRadius.circular(8).r,
+                    borderRadius: BorderRadius.circular(8.r),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                            vertical: 8.0, horizontal: 8.0)
-                        .r,
+                    padding: EdgeInsets.symmetric(
+                        vertical: 8.0.h, horizontal: 8.0.w),
                     child: Center(
                       child: Column(
                         children: [
-                          SizedBox(height: 6.h),
+                          6.verticalSpace,
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text('Current Balance',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 12.sp)),
-                              SizedBox(width: 5.w),
-                              Icon(Icons.visibility,
-                                  color: Colors.white, size: 10.sp)
+                                      color: Colors.white,
+                                      fontSize: 12.0.sp,
+                                      height: 1.4.h)),
+                              5.horizontalSpace,
+                              Icon(Icons.visibility_outlined,
+                                  color: Colors.white, size: 13.sp)
                             ],
                           ),
-                          SizedBox(height: 10.h),
+                          10.verticalSpace,
                           Text(
                             '\$7,860.00',
                             style: TextStyle(
                                 color: Colors.white,
-                                height: 1.2,
+                                height: 1.4.r,
                                 fontSize: 30.sp,
                                 fontWeight: FontWeight.w400),
                           ),
-                          SizedBox(height: 15.h),
+                          20.verticalSpace,
                           Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0).r,
+                            padding: EdgeInsets.symmetric(horizontal: 8.0.w),
                             child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
-                                    height: 80.h,
-                                    width: 160.w,
+                                    height: 76.h,
+                                    width: 172.w,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10).r,
+                                      borderRadius: BorderRadius.circular(10.r),
                                       color: Color(0xFF45466D),
                                     ),
                                     child: Column(
@@ -184,10 +188,10 @@ class _HomePageState extends State<HomePage> {
                                         ]),
                                   ),
                                   Container(
-                                    height: 80.h,
-                                    width: 160.w,
+                                    height: 76.h,
+                                    width: 172.w,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10).r,
+                                      borderRadius: BorderRadius.circular(10.r),
                                       color: Color(0xFF45466D),
                                     ),
                                     child: Column(
@@ -211,38 +215,39 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
-                const Text('Bill Payments',
-                    style: TextStyle(fontWeight: FontWeight.bold)),
-                const SizedBox(height: 20),
-                SizedBox(
-                  height: 200,
+                30.verticalSpace,
+                Text('Bill Payments',
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                    )),
+                20.verticalSpace,
+                Container(
+                  height: 250.h,
+                  color: Colors.white,
                   child: GridView.count(
                     crossAxisCount: 4,
-                    crossAxisSpacing: 6,
-                    mainAxisSpacing: 6,
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 0,
                     children: List.generate(billPayments.length, (index) {
                       return MenuCard(menuItem: billPayments[index]);
                     }),
                   ),
                 ),
-                const SizedBox(height: 20),
-                const Row(
+                20.verticalSpace,
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Transactions',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold)),
-                    Text('See All'),
+                    Text('Transactions', style: TextStyle(fontSize: 16.sp)),
+                    Text('See All', style: TextStyle(fontSize: 12.sp)),
                   ],
                 ),
-                const SizedBox(height: 20),
-                const SizedBox(
-                  height: 200,
+                20.verticalSpace,
+                SizedBox(
+                  height: 200.h,
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        TileWidget(
+                        const TileWidget(
                           icon: Icons.calendar_month_outlined,
                           iconColor: Color(0xFF6669E0),
                           title: 'Shopping',
@@ -250,8 +255,8 @@ class _HomePageState extends State<HomePage> {
                           price: '-\$500.00',
                           containerColor: Color(0xFFEBEBfB),
                         ),
-                        SizedBox(height: 15),
-                        TileWidget(
+                        15.verticalSpace,
+                        const TileWidget(
                           icon: Icons.calendar_month_outlined,
                           iconColor: Colors.black,
                           title: 'Transfer',
@@ -259,8 +264,8 @@ class _HomePageState extends State<HomePage> {
                           price: '-\$2,800.00',
                           containerColor: Color(0xFFDCDCE8),
                         ),
-                        SizedBox(height: 15),
-                        TileWidget(
+                        15.verticalSpace,
+                        const TileWidget(
                           icon: Icons.calendar_month_outlined,
                           iconColor: Color(0xFF27BF8E),
                           title: 'Concert Ticket',
@@ -268,7 +273,7 @@ class _HomePageState extends State<HomePage> {
                           price: '-\$170.00',
                           containerColor: Color(0xFFE0f4ED),
                         ),
-                        SizedBox(height: 20),
+                        20.verticalSpace,
                       ],
                     ),
                   ),
@@ -280,7 +285,7 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(5)),
+            color: Colors.white, borderRadius: BorderRadius.circular(5.r)),
         child: BottomNavigationBar(
           showSelectedLabels: false,
           showUnselectedLabels: false,

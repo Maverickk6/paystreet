@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:paystreet/screens/menu_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 class MenuCard extends StatelessWidget {
   final MenuItem menuItem;
@@ -15,29 +17,33 @@ class MenuCard extends StatelessWidget {
       children: [
         Container(
           clipBehavior: Clip.hardEdge,
-          height: 80,
-          width: 80,
+          height: 80.h,
+          width: 80.w,
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.white, width: 18, ),
+            border: Border.all(
+              color: Colors.white,
+              width: 14.r,
+            ),
             color: menuItem.color,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(20.r),
           ),
           child: Icon(menuItem.icon, color: menuItem.iconColor),
         ),
         Positioned(
           width: 75,
-          top: 73,
+          top: 95.h,
           bottom: 0,
-          child: Flexible(
-            
-            child: Text(
-                        menuItem.title,
-                        style: const TextStyle(fontSize: 13),
-                        textAlign: TextAlign.center,
-                        softWrap: true,
-                        overflow: TextOverflow.visible,
-                      ),
-          ),
+          child: Flex(direction: Axis.vertical, children: [
+            Flexible(
+              child: Text(
+                menuItem.title,
+                style: TextStyle(fontSize: 13.sp),
+                textAlign: TextAlign.center,
+                softWrap: true,
+                overflow: TextOverflow.visible,
+              ),
+            ),
+          ]),
         )
       ],
     );

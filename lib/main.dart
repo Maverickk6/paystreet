@@ -16,16 +16,18 @@ class MyApp extends StatelessWidget {
       designSize: const Size(414, 896),
       minTextAdapt: true,
       splitScreenMode: true,
-      child: MaterialApp(
+      builder: (context, child) => MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          scaffoldBackgroundColor: Color.fromARGB(255, 243, 243, 243),
+          scaffoldBackgroundColor: Color(0xFFFAFAFA),
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
+          textTheme: const TextTheme().apply(fontSizeFactor: 1.sp),
         ),
-        home: const HomePage(),
+        home: child,
       ),
+      child: const HomePage(),
     );
   }
 }
